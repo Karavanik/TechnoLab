@@ -1,5 +1,10 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import parse_qs
+import os
+import webbrowser
+
+# pliki zawsze z folderu, w którym leży main.py
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -18,4 +23,6 @@ class Handler(SimpleHTTPRequestHandler):
         self.end_headers()
 
 
+# automatycznie otwiera stronę główną w przeglądarce
+webbrowser.open("http://localhost:8080/index.html")
 HTTPServer(("localhost", 8080), Handler).serve_forever()
