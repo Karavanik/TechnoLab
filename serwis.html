@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel serwisowy | TeconoLab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">TeconoLab | Serwis Komputerów</div>
+    <nav>
+      <a href="serwis.html" class="serwis-link">Serwis</a>
+      <a href="index.html" class="active">Główna</a>
+      <a href="logowanie.html">Wyjście</a>
+      <a href="rejestracja.html">Rejestracja</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="panel-title">Panel serwisowy</h2>
+
+    <section class="card panel">
+      <div class="panel-row panel-head">
+        <span>ID</span>
+        <span>Klient</span>
+        <span>Urządzenie</span>
+        <span>Opis problemu</span>
+        <span>Status</span>
+        <span>Akcja</span>
+      </div>
+
+      <div class="panel-row">
+        <span>#1</span>
+        <span class="client">Tim<br>Tim@example.com</span>
+        <span>Laptop</span>
+        <span>Nie włącza się</span>
+        <span>Diagnostyka</span>
+        <form class="action">
+          <select name="status">
+            <option>Przyjęte</option>
+            <option selected>Diagnostyka</option>
+            <option>W naprawie</option>
+            <option>Gotowe</option>
+          </select>
+          <button type="submit">OK</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
