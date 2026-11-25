@@ -1,6 +1,16 @@
+import os
+
 from flask import Flask, redirect, render_template, request, url_for
 
+import db
+
 app = Flask(__name__)
+os.makedirs(app.instance_path, exist_ok=True)
+app.config["DATABASE"] = os.path.join(app.instance_path, "technolab.db")
+db.init_app(app)
+
+with app.app_context():
+    db.init_db()
 
 
 @app.route("/")
