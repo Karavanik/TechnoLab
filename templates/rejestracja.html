@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rejestracja | TeconoLab</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body class="register">
 
   <div class="register-card">
     <h1>Rejestracja</h1>
 
-    <form action="index.html">
+    <form action="{{ url_for('register') }}" method="post">
       <label for="imie">Imie:</label>
       <input type="text" id="imie" name="imie" required>
 
