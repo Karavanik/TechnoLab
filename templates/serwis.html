@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel serwisowy | TeconoLab</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
   <header>
     <div class="logo">TeconoLab | Serwis Komputerów</div>
     <nav>
-      <a href="serwis.html" class="serwis-link">Serwis</a>
-      <a href="index.html" class="active">Główna</a>
-      <a href="logowanie.html">Wyjście</a>
-      <a href="rejestracja.html">Rejestracja</a>
+      <a href="{{ url_for('serwis') }}" class="serwis-link">Serwis</a>
+      <a href="{{ url_for('index') }}" class="active">Główna</a>
+      <a href="{{ url_for('login') }}">Wyjście</a>
+      <a href="{{ url_for('register') }}">Rejestracja</a>
     </nav>
   </header>
 
