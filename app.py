@@ -103,6 +103,13 @@ def klient():
     return render_template("klient.html")
 
 
+@app.route("/zgloszenie")
+def zgloszenie():
+    if "user_id" not in session:
+        return redirect(url_for("login"))
+    return render_template("zgloszenie.html")
+
+
 @app.route("/serwis")
 def serwis():
     if session.get("role") != "serwis":
