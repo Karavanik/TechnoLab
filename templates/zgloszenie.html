@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal klienta | TeconoLab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+    <div class="logo">TeconoLab | Serwis Komputerów</div>
+    <nav>
+      <a href="{{ url_for('klient') }}">Główna</a>
+      <a href="{{ url_for('logout') }}" class="logout">Wyloguj</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="portal-title">Portal klienta – Cześć {{ session.get('imie') }}</h1>
+
+    <section class="card portal-card">
+      <form class="repair-form" action="#" method="post">
+        <label for="device">Prześlij nowe zgłoszenie naprawy</label>
+        <select id="device" name="device">
+          <option value="laptop">Laptop</option>
+          <option value="pc">Komputer stacjonarny</option>
+          <option value="other">Inne</option>
+        </select>
+
+        <label for="model">Marka i model</label>
+        <input type="text" id="model" name="model">
+
+        <label for="description">Opis usterki</label>
+        <input type="text" id="description" name="description">
+
+        <button type="submit" class="btn btn-full">Złóż wniosek</button>
+      </form>
+    </section>
+
+    <section class="card portal-card">
+      <h2 class="portal-subtitle">Twoje urządzenia są naprawiane</h2>
+      <p class="empty-info">Nie masz jeszcze żadnych urządzeń oddanych do naprawy.</p>
+    </section>
+  </main>
+
+</body>
+</html>
