@@ -9,6 +9,7 @@
 <body class="register">
 
   <div class="register-card">
+    <a href="{{ url_for('index') }}" class="back-link" onclick="if (history.length > 1) { history.back(); return false; }">&larr; Wróć</a>
     <h1>Rejestracja</h1>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
