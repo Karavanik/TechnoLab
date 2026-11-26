@@ -1,6 +1,7 @@
 import sqlite3
 
 from flask import current_app, g
+from werkzeug.security import generate_password_hash
 
 
 def get_db():
@@ -23,6 +24,11 @@ def init_db():
     db = get_db()
     with current_app.open_resource("schema.sql") as f:
         db.executescript(f.read().decode("utf-8"))
+    # konto serwisowe (tymczasowe dane — zmień hasło)
+    db.execute(
+        "INSERT OR IGNORE INTO users (imie, email, password_hash, role) VALUES (?, ?, ?, 'serwis')",
+        ("Serwis", "serwis@gmail.com", generate_password_hash("1234")),
+    )
     db.commit()
 
 

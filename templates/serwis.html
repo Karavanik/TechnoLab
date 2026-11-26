@@ -11,9 +11,15 @@
   <header>
     <div class="logo">TeconoLab | Serwis Komputerów</div>
     <nav>
+      {% if session.get('role') == 'serwis' %}
       <a href="{{ url_for('serwis') }}" class="serwis-link">Serwis</a>
+      {% endif %}
       <a href="{{ url_for('index') }}" class="active">Główna</a>
-      <a href="{{ url_for('login') }}">Wyjście</a>
+      {% if session.get('user_id') %}
+      <a href="{{ url_for('logout') }}">Wyjście</a>
+      {% else %}
+      <a href="{{ url_for('login') }}">Logowanie</a>
+      {% endif %}
       <a href="{{ url_for('register') }}">Rejestracja</a>
     </nav>
   </header>
